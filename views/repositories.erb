@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Lisa's repositories</title>
+    <link rel="stylesheet" href="styles.css" type="text/css">
+  </head>
+  <body>
+
+    <img src=<%=@avatar_url %> >
+  	<% @repositories.each do |repo| %>
+  		<div class="repo-post">
+        <table class="table">
+             <thead>
+               <tr>
+                 <th>
+                  <b> Repository Name</b>
+                 </th>
+                 <th>
+                   <b>Description: </b>
+                 </th>
+                 <th>
+                   <b>Repository: </b>
+                 </th>
+               </tr>
+              <tr>
+                <th><%= repo["name"] %>
+                </th>
+                <th><%= repo["desc"] %>
+                </th>
+                <!-- how do I hyperlink? !-->
+                <th> <a href= <%= repo["url"] %> > <%= repo["url"] %> </a>
+                </th>
+              </tr>
+             </thead>
+
+           </table>
+
+
+
+
+
+
+        <!--
+				<p> <b>Repository Name:</b> <%= repo["name"] %> </p>
+				<p> <b>Description:</b> 		<%= repo["desc"] %> </p>
+				<p> <b>Repository URL:</b>	<%= repo["url"] %> </p>
+        !-->
+				<hr>
+			</div>
+  	<% end %>
+  </body>
+</html>
